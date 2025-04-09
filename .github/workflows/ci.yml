@@ -14,8 +14,5 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
       - name: Display a hello message
         run: echo "Hello, this job is running on my self-hosted runner!"
