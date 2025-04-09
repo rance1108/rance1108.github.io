@@ -1,0 +1,8 @@
+body {
+    font-family: sans-serif;
+}
+#data-container {
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
