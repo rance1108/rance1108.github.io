@@ -1,7 +1,9 @@
 # .github/workflows/ci.yml
 name: CI Workflow
 
-# 當有 push 到 main 分支時就會觸發此工作流程
+permissions:
+  contents: read 
+
 on:
   push:
     branches: [ main ]
@@ -10,7 +12,6 @@ on:
 
 jobs:
   build:
-    # 指定使用自架構 Runner 執行
     runs-on: self-hosted
 
     steps:
@@ -20,6 +21,7 @@ jobs:
         run: echo "Hello, this job is running on my self-hosted runner!"
         
       - name: Build the site in the jekyll/builder container
+        shell: bash 
         run: |
           docker run \
           -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
