@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // !!! 重要：這裡先用一個佔位符 URL
     // !!! 稍後在部署 FastAPI 後，你需要將其替換為你後端的實際 URL
-    const apiUrl = 'YOUR_FASTAPI_BACKEND_URL/api/data'; // <--- 稍後修改這裡
+    const apiUrl = 'https://100.20.92.101/api/data';
 
     fetch(apiUrl)
         .then(response => {
