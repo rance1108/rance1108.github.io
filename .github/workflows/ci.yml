@@ -1,0 +1,21 @@
+# .github/workflows/ci.yml
+name: CI Workflow
+
+# 當有 push 到 main 分支時就會觸發此工作流程
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    # 指定使用自架構 Runner 執行
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Display a hello message
+        run: echo "Hello, this job is running on my self-hosted runner!"
